@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "removeComments": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [
+      "node_modules",
+      "dist",
+      "**/*.spec.ts"
+  ]
+}
