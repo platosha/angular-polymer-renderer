@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import {NgModule, Provider, Injectable, Inject, Renderer, RootRenderer, RenderComponentType, __core_private__} from '@angular/core';
+import {NgModule, ModuleWithProviders, Provider, Injectable, Inject, Renderer, RootRenderer, RenderComponentType, __core_private__} from '@angular/core';
 import {BrowserModule, EventManager, AnimationDriver, DOCUMENT} from '@angular/platform-browser';
 
 import {AnimationStyles, AnimationKeyframe, AnimationPlayer, NoOpAnimationPlayer} from './private_import_angular_core';
@@ -197,7 +197,7 @@ export class PolymerRootRenderer implements RootRenderer {
   protected registeredComponents: Map<string, PolymerRenderer> = new Map<string, PolymerRenderer>();
 
   constructor(
-    @Inject(DOCUMENT) public document: Document,
+    @Inject(DOCUMENT) public document: any,
     public eventManager: EventManager,
     public animationDriver: AnimationDriver
   ) {}
@@ -223,7 +223,7 @@ export const POLYMER_RENDER_PROVIDERS: Provider[] = [
 
 @NgModule({
   exports: [BrowserModule],
-  providers: POLYMER_RENDER_PROVIDERS
+  providers: [POLYMER_RENDER_PROVIDERS]
 })
 export class PolymerModule {
 }

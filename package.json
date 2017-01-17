@@ -6,9 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "prepublish": "tsc"
+    "ngc": "ngc",
+    "ngc:w": "ngc -w",
+    "prepublish": "ngc && tsc"
   },
   "repository": {
     "type": "git",
@@ -25,15 +25,15 @@
   },
   "homepage": "https://github.com/platosha/angular-polymer#readme",
   "devDependencies": {
-    "@types/core-js": "^0.9.35",
-    "core-js": "^2.4.1",
-    "typescript": "^2.1.5"
-  },
-  "dependencies": {
+    "@angular/compiler": "^2.2.0",
+    "@angular/compiler-cli": "^2.2.0",
     "@angular/common": "^2.2.0",
     "@angular/core": "^2.2.0",
     "@angular/platform-browser": "^2.2.0",
     "rxjs": "^5.0.0",
-    "zone.js": "^0.7.2"
+    "zone.js": "^0.7.2",
+    "@types/core-js": "^0.9.35",
+    "core-js": "^2.4.1",
+    "typescript": "~2.0.3"
   }
 }
