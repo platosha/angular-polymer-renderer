@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-import {NgModule, ModuleWithProviders, Provider, Injectable, Inject, Renderer, RootRenderer, RenderComponentType, __core_private__} from '@angular/core';
+import {NgModule, ModuleWithProviders, Provider, Injectable, Inject, Renderer, RootRenderer, RenderComponentType, AnimationPlayer} from '@angular/core';
 import {BrowserModule, EventManager, AnimationDriver, DOCUMENT} from '@angular/platform-browser';
-
-import {AnimationStyles, AnimationKeyframe, AnimationPlayer, NoOpAnimationPlayer} from './private_import_angular_core';
 
 const Polymer: any = (<any>window).Polymer;
 
@@ -168,8 +166,8 @@ export class PolymerRenderer implements Renderer {
 
   animate(
       element: any,
-      startingStyles: AnimationStyles,
-      keyframes: AnimationKeyframe[],
+      startingStyles: any,
+      keyframes: any[],
       duration: number,
       delay: number,
       easing: string,
@@ -178,7 +176,6 @@ export class PolymerRenderer implements Renderer {
     if (!element.domHost && this._rootRenderer.document.body.contains(element)) {
       return this._animationDriver.animate(element, startingStyles, keyframes, duration, delay, easing, previousPlayers);
     }
-    return new NoOpAnimationPlayer();
   }
 }
 
